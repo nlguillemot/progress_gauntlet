@@ -9,7 +9,7 @@ void main( uint3 DTid : SV_DispatchThreadID )
 {
     for (;;)
     {
-        uint curr = IDBuffer.Load(CurrIndexBuffer.Load(0));
+        uint curr = IDBuffer.Load(4 * CurrIndexBuffer.Load(0));
 
         if (curr == DTid.x)
         {
